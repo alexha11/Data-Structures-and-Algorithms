@@ -41,7 +41,7 @@ using namespace std;
 void solve() {
     int a, b;
     cin >> a >> b; 
-    if ((a == 1) & (b == 1) ) {
+    if (a == b) {
         cout << "Maija";
     } else cout << "Uolevi";
     
