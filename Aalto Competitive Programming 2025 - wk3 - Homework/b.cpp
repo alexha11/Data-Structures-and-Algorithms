@@ -1,20 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 const int MAXN = 1e6 + 1;
 int n, f[MAXN], dp[MAXN];
-
+ 
 void solve() {
     int n; 
     cin >> n;
     
     for(int i = 1; i <= n; i++) {
         cin >> f[i];
-    }
-    
-    if(n <= 3) {
-        cout << 0;
-        return;
     }
     
     dp[1] = 0;
@@ -31,12 +26,12 @@ void solve() {
     cout << res; 
    
 }
-
+ 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
+ 
     solve();
-
+ 
     return 0;
 }
