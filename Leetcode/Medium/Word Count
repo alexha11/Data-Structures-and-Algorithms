@@ -1,0 +1,36 @@
+class Solution {
+public:
+    int countCharacters(vector<string>& words, string chars) {
+        vector<int>charCount(27, 0);
+        
+        for (int c : chars) {
+            //cout << c - 96 << ' ';
+            charCount[c - 96]++;
+        }
+        
+        int res = 0;
+        for(string word : words) {
+            vector<int>wordCount(27, 0);
+            
+            for(int c : word) {
+                wordCount[c - 96]++;
+            }
+            
+            bool ok = true;
+            for(int i = 1; i <= 26; i++) {
+                if (wordCount[i] > charCount[i]) {
+                    ok = false;
+                    break;
+                }
+            }
+            
+            
+            if (ok) {
+                res += word.length();
+            }
+            
+        }
+        
+        return res;
+    }
+};
